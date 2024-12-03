@@ -1,0 +1,40 @@
+name: CodeQL Analysis for Go
+
+on:
+  push:
+    branches: 
+      - main
+      - feature/*
+    paths:
+      - 'services/go-service'
+  pull_request:
+    branches: 
+      - main
+      - 'services/go-service'
+
+jobs:
+  codeql-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up CodeQL
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: go
+          # Optionally, specify custom queries here:
+          # queries: security-extended,security-and-quality
+
+      # Step 3: Build the Go code
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+        with:
+          setup-go-dependencies: true
+
+      # Step 4: Run the CodeQL analysis
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
