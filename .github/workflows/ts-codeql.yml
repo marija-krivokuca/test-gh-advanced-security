@@ -1,4 +1,4 @@
-name: CodeQL Analysis for TS
+name: "CodeQL Analysis for TS"
 
 on:
   pull_request:
@@ -22,8 +22,7 @@ permissions:
   security-events: write
 
 jobs:
-  analyze:
-    name: Analyze
+  codeql-analysis-ts:
     runs-on: ubuntu-latest
 
     strategy:
