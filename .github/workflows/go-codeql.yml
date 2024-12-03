@@ -42,8 +42,7 @@ jobs:
       # Step 3: Build the Go code
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
-        with:
-          setup-go-dependencies: true
+
 
       # Step 4: Run the CodeQL analysis
       - name: Perform CodeQL Analysis
