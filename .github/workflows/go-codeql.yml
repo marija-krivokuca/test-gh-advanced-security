@@ -6,11 +6,11 @@ on:
       - main
       - feature/*
     paths:
-      - 'services/go-service'
+      - 'services/go-service/**'
   pull_request:
     branches: 
       - main
-      - 'services/go-service'
+      - 'services/go-service/**'
 
 jobs:
   codeql-analysis:
