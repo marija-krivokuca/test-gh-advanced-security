@@ -15,6 +15,16 @@ on:
 jobs:
   codeql-analysis-go:
     runs-on: ubuntu-latest
+    permissions:
+      # required for all workflows
+      security-events: write
+
+      # required to fetch internal or private CodeQL packs
+      packages: read
+
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
 
     steps:
       # Step 1: Check out the repository
