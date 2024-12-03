@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'services/ts-service'
+      - 'services/ts-service/**'
   push:
     branches:
       - main
     paths:
-      - 'services/ts-service'
+      - 'services/ts-service/**'
 
   #schedule:
   #  - cron: '31 7 * * 3'  
