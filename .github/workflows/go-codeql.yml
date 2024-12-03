@@ -5,12 +5,12 @@ on:
     branches: 
       - main
       - feature/*
-    #paths:
-      #- 'services/go-service/**'
+    paths:
+      - 'services/go-service/**'
   pull_request:
     branches: 
       - main
-      #- 'services/go-service/**'
+      - 'services/go-service/**'
 
 jobs:
   codeql-analysis-go:
